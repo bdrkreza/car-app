@@ -1,11 +1,10 @@
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import CardDisplay from '../components/cardDisplay';
-import Search from '../components/search';
-import DropdownMenu from '../components/selection';
-import SkeletonCard from '../components/skeletonCard';
-import styles from '../styles/Home.module.css';
-
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import CardDisplay from "../components/cardDisplay";
+import Search from "../components/search";
+import DropdownMenu from "../components/selection";
+import SkeletonCard from "../components/skeletonCard";
+import styles from "../styles/Home.module.css";
 
 export async function getStaticProps() {
   // Fetch data from external API
@@ -18,9 +17,7 @@ export async function getStaticProps() {
   return { props: { data } };
 }
 
-
-export default function Home({data}) {
-
+export default function Home({ data }) {
   const [filteredResults, setFilteredResults] = useState([]);
   const [category, setCategory] = useState("");
   const [items, setItems] = useState([]);
@@ -31,7 +28,8 @@ export default function Home({data}) {
     setCategory(event.target.value);
   };
 
-  const allCategory = ["SELECT CAR BRAND NAME",
+  const allCategory = [
+    "SELECT CAR BRAND NAME",
     ...new Set(
       data.results.map((category) => category.car_manufacturer.maker_name)
     ),
@@ -49,12 +47,6 @@ export default function Home({data}) {
       });
   }, [category]);
 
-  if (isLoading)
-    return (
-      <div sx={{ mt: 20 }}>
-        <SkeletonCard/>
-      </div>
-    );
   if (!data) return <p>No profile data</p>;
   return (
     <div className={styles.container}>
@@ -64,15 +56,23 @@ export default function Home({data}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex justify-around items-center m-6">
-       <DropdownMenu  allCategory={allCategory} handleChange={handleChange} category={category} />
+        <DropdownMenu
+          allCategory={allCategory}
+          handleChange={handleChange}
+          category={category}
+        />
         <Search />
       </div>
-      <div className="flex flex-wrap py-5 justify-center items-center gap-4 ">
-        {items.map((data) => (
-           <CardDisplay key={data.car_id} data={data}/>
-        ))}
-      </div>
-   
+
+      {isLoading ? (
+        <SkeletonCard />
+      ) : (
+        <div className="flex flex-wrap py-5 justify-center items-center gap-4 ">
+          {items.map((data) => (
+            <CardDisplay key={data.car_id} data={data} />
+          ))}
+        </div>
+      )}
     </div>
-  )
+  );
 }
