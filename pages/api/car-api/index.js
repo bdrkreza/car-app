@@ -9,6 +9,15 @@ export default async function handler(req, res) {
   switch (method) {
     case "GET":
       try {
+        const { resName } = req.query;
+        const res = await CarAutoModel.find({ $text: { $search: resName } });
+        res.render("res", { res });
+      } catch (error) {
+        res.status(400).json({ success: false, error });
+      }
+      break;
+    case "put":
+      try {
         const getCarData = await CarAutoModel.find(
           {}
         ); /* find all the data in our database */
