@@ -7,16 +7,15 @@ export default async function handler(req, res) {
   await connectDB();
 
   switch (method) {
-    case "":
+    case "DELETE":
       try {
-        const { resName } = req.query;
-        const res = await CarAutoModel.find({ $text: { $search: resName } });
-        res.render("res", { res });
+        await CarAutoModel.findOneAndDelete({ _id: req.query.id });
+        res.send("car data deleted success");
       } catch (error) {
         res.status(400).json({ success: false, error });
       }
       break;
-    case "GET":
+    case "PUT":
       try {
         const getCarData = await CarAutoModel.find(
           {}
@@ -28,12 +27,12 @@ export default async function handler(req, res) {
       break;
     case "POST":
       try {
-        const pet = await Pet.create(
+        const pet = await CarAutoModel.create(
           req.body
         ); /* create a new model in the database */
         res.status(201).json({ success: true, data: pet });
       } catch (error) {
-        res.status(400).json({ success: false });
+        res.status(400).json({ success: false, error });
       }
       break;
     default:
