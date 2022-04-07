@@ -12,7 +12,7 @@ export default function Form() {
           <div>
             <div>
               <label htmlFor="chassi_number" className="block mb-1 ml-1">
-                chassi Number
+                chassis Number
               </label>
               <input
                 id="chassi_number"
