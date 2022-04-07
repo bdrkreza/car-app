@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   await connectDB();
 
   switch (method) {
-    case "GET":
+    case "":
       try {
         const { resName } = req.query;
         const res = await CarAutoModel.find({ $text: { $search: resName } });
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         res.status(400).json({ success: false, error });
       }
       break;
-    case "put":
+    case "GET":
       try {
         const getCarData = await CarAutoModel.find(
           {}
