@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 /* PetSchema will correspond to a collection in your MongoDB database. */
 const CarModelSchema = new mongoose.Schema({
-  model_name: {
+  maker_name: {
     model_name: { type: String },
     release_year: { type: Number },
     serial: { type: String },
