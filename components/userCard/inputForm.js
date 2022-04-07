@@ -17,7 +17,7 @@ export default function Form() {
               <input
                 id="chassi_number"
                 type="name"
-                placeholder="Enter chassi number"
+                placeholder="Enter chassis number"
                 required=""
                 className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
               />
