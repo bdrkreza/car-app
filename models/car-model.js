@@ -5,7 +5,7 @@ const CarModelSchema = new mongoose.Schema({
   model_name: {
     model_name: { type: String },
     release_year: { type: Number },
-    serial: { type: Number },
+    serial: { type: String },
   },
   car_body_type: {
     id: { type: Number },
