@@ -1,4 +1,3 @@
-
 export default function Form() {
   return (
     <div>
@@ -11,36 +10,30 @@ export default function Form() {
             Contact us
           </h2>
           <div>
-            <div className="col-span-6 sm:col-span-3">
-              <label
-                htmlFor="country"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Chassis Number
+            <div>
+              <label htmlFor="chassi_number" className="block mb-1 ml-1">
+                chassi Number
               </label>
-              <select
-                id="country"
-                name="country"
-                autoComplete="country-name"
-                className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              >
-                <option>United States</option>
-                <option>Canada</option>
-                <option>Mexico</option>
-              </select>
+              <input
+                id="chassi_number"
+                type="name"
+                placeholder="Enter chassi number"
+                required=""
+                className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+              />
             </div>
           </div>
           <div className="col-span-6 sm:col-span-3">
             <label
-              htmlFor="country"
+              htmlFor="maker"
               className="block text-sm font-medium text-gray-700"
             >
               maker
             </label>
             <select
-              id="country"
-              name="country"
-              autoComplete="country-name"
+              id="maker"
+              name="name"
+              autoComplete="maker-name"
               className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             >
               <option>United States</option>
@@ -50,15 +43,15 @@ export default function Form() {
           </div>
           <div className="col-span-6 sm:col-span-3">
             <label
-              htmlFor="country"
+              htmlFor="model"
               className="block text-sm font-medium text-gray-700"
             >
               model
             </label>
             <select
-              id="country"
-              name="country"
-              autoComplete="country-name"
+              id="model"
+              name="name"
+              autoComplete="model-name"
               className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             >
               <option>United States</option>
@@ -67,13 +60,11 @@ export default function Form() {
             </select>
           </div>
           <div>
-            <label htmlFor="email" className="block mb-1 ml-1">
-              Car Grade/Package
-            </label>
+            <label className="block mb-1 ml-1">Car Grade/Package</label>
             <input
-              id="email"
-              type="email"
-              placeholder="Your email"
+              id="car"
+              type="name"
+              placeholder="car Grade Package"
               required=""
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
             />
@@ -97,13 +88,13 @@ export default function Form() {
                 <option>Mexico</option>
               </select>
             </div>
-            <label htmlFor="email" className="block mb-1 ml-1">
+            <label htmlFor="email" className="block mb-1 ml-1 mt-4">
               Engine Number
             </label>
             <input
-              id="email"
-              type="email"
-              placeholder="Your email"
+              id="engine-number"
+              type="name"
+              placeholder="enter engine number"
               required=""
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
             />
