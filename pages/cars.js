@@ -4,7 +4,7 @@ import Card from "../components/userCard/Card";
 // This gets called on every request
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`https://car-app.vercel.app/api/car`);
+  const res = await fetch(`https://car-app.vercel.app/api/cars`);
   const data = await res.json();
 
   // Pass data to the page via props
