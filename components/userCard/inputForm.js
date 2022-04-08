@@ -1,13 +1,15 @@
-export default function Form() {
+export default function Form({ searchHandle, data }) {
   return (
     <div>
+      
       <section className="p-6 dark:text-coolGray-100">
+      
         <form
           noValidate=""
           className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-coolGray-900 ng-untouched ng-pristine ng-valid"
         >
-          <h2 className="w-full text-3xl font-bold leading-tight">
-            Contact us
+          <h2 className="w-full text-2xl font-bold leading-tight">
+          CHOOSE YOUR CAR MODEL
           </h2>
           <div>
             <div>
@@ -16,6 +18,7 @@ export default function Form() {
               </label>
               <input
                 id="chassi_number"
+                onChange={searchHandle}
                 type="name"
                 placeholder="Enter chassi number"
                 required=""
@@ -36,9 +39,9 @@ export default function Form() {
               autoComplete="maker-name"
               className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             >
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Mexico</option>
+              {data?.data?.map((p) =>
+                p.package_type.map((p) => <option key={p}>{p}</option>)
+              )}
             </select>
           </div>
           <div className="col-span-6 sm:col-span-3">
@@ -54,20 +57,29 @@ export default function Form() {
               autoComplete="model-name"
               className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             >
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Mexico</option>
+              {data?.data?.map((p) =>
+                p.package_type.map((p) => <option key={p}>{p}</option>)
+              )}
             </select>
           </div>
-          <div>
-            <label className="block mb-1 ml-1">Car Grade/Package</label>
-            <input
-              id="car"
-              type="name"
-              placeholder="car Grade Package"
-              required=""
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
-            />
+
+          <div className="col-span-6 sm:col-span-3">
+            <label
+              htmlFor="maker"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Grade/Package
+            </label>
+            <select
+              id="maker"
+              name="name"
+              autoComplete="maker-name"
+              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            >
+              {data?.data?.map((p) =>
+                p.package_type.map((p) => <option key={p}>{p}</option>)
+              )}
+            </select>
           </div>
           <div>
             <div className="col-span-6 sm:col-span-3">
@@ -83,21 +95,32 @@ export default function Form() {
                 autoComplete="country-name"
                 className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               >
-                <option>United States</option>
-                <option>Canada</option>
-                <option>Mexico</option>
+                {data?.data?.map((year, index) => (
+                  <option key={index}>{year.car_year}</option>
+                ))}
               </select>
             </div>
-            <label htmlFor="email" className="block mb-1 ml-1 mt-4">
-              Engine Number
-            </label>
-            <input
-              id="engine-number"
-              type="name"
-              placeholder="enter engine number"
-              required=""
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
-            />
+          </div>
+          <div>
+            <div className="col-span-6 sm:col-span-3">
+              <label
+                htmlFor="country"
+                className="block text-sm font-medium text-gray-700"
+              >
+                engines Number
+              </label>
+              <select
+                id="engines_number"
+                defaultValue="select"
+                name="engines_number"
+                autoComplete="engines_number"
+                className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              >
+                {data?.data?.map((p) =>
+                  p.engines_number.map((p) => <option key={p}>{p}</option>)
+                )}
+              </select>
+            </div>
           </div>
           <div>
             <button

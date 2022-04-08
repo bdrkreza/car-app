@@ -1,9 +1,8 @@
-
 export default function CardImage() {
   return (
     <>
-      <label className="block text-sm font-medium text-gray-700">
-        Cover photo
+      <label className="block text-md mt-5 text-center font-medium text-gray-700">
+        Drag & Drop file you want to upload
       </label>
       <div className="section">
         <div className="space-y-1 text-center ">
@@ -22,21 +21,14 @@ export default function CardImage() {
             />
           </svg>
           <div className="flex text-sm text-gray-600">
+          <input id="fileUpload" accept="image" type="file" hidden className="cursor-pointer" />
             <label
-              htmlFor="file-upload"
-              className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+              htmlFor="fileUpload"
+              className="cursor-pointer bg-white rounded-md font-medium  focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
             >
-              <span>Upload a file</span>
-              <input
-                id="file-upload"
-                name="file-upload"
-                type="file"
-                className="sr-only"
-              />
+            
             </label>
-            <p className="pl-1">or drag and drop</p>
           </div>
-          <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
         </div>
       </div>
     </>

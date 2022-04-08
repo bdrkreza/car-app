@@ -11,9 +11,7 @@ export default async function handler(req, res) {
       try {
         const { search } = req.query;
         console.log(search);
-        const res = await CarAutoModel.find({
-          $in: [{ chassis_number: search }],
-        });
+        const res = await CarAutoModel.find(search);
         res.render("res", { res });
       } catch (error) {
         res.status(400).json({ success: false, error });

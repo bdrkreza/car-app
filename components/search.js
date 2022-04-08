@@ -1,5 +1,18 @@
+import { useState } from "react";
 
 export default function Search() {
+  const [cars, setCars] = useState([]);
+  console.log(cars);
+  // useEffect(() => {
+  //   searchHandle();
+  // }, []);
+
+  const searchHandle = async (e) => {
+    let key = e?.target.value;
+    let result = await fetch(`http://localhost:3000/api/cars/${key}`);
+    result = await result.json();
+    setCars(result);
+  };
   return (
     <>
       <div className="relative xl:w-72">
@@ -18,11 +31,18 @@ export default function Search() {
           </svg>
         </div>
         <input
+          onChange={searchHandle}
           type="text"
           id="email-adress-icon"
           className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Search..."
         />
+
+        {cars?.data?.map((data, index) => (
+          <ul key={index}>
+            <option>{data.chassis_number}</option>
+          </ul>
+        ))}
       </div>
     </>
   );

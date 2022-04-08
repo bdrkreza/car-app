@@ -18,7 +18,7 @@ const navItem = [
     level: "UploadCar",
   },
   {
-    link: "/car",
+    link: "/cars",
     level: "Car",
   },
 ];

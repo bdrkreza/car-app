@@ -3,10 +3,11 @@ import mongoose from "mongoose";
 /* PetSchema will correspond to a collection in your MongoDB database. */
 const CarModelSchema = new mongoose.Schema({
   maker_name: {
-    model_name: { type: String, required: "maker name can't be empty." },
+    maker_name: { type: String, required: "maker name can't be empty." },
     release_year: { type: Number },
     serial: { type: String },
   },
+  model_name: { type: String, required: "model name can't be empty." },
   car_body_type: {
     id: { type: Number },
     body_name: { type: String, required: "body name can't be empty." },
