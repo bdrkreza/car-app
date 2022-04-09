@@ -1,5 +1,5 @@
-import CardImage from "./cardImage";
 import CardTop from "./cardTop";
+import DropFileInput from "./drop-file-input";
 import Form from "./inputForm";
 
 export default function Card({ data, searchHandle }) {
@@ -13,7 +13,7 @@ export default function Card({ data, searchHandle }) {
           </h2>
           <div className="space-y-2"></div>
           <div className="border-4 mt-5 border-dashed border-gray-400 rounded-lg h-96 md:h-full lg:h-full">
-            <CardImage />
+            <DropFileInput />
           </div>
         </div>
         <Form searchHandle={searchHandle} data={data} />
