@@ -9,13 +9,14 @@ const CarModelSchema = new mongoose.Schema({
   },
   model_name: { type: String, required: "model name can't be empty." },
   car_body_type: {
-    id: { type: Number },
     body_name: { type: String, required: "body name can't be empty." },
     body_image: { type: String, default: "image-url" },
     body_image_url: { type: String, default: "image-url" },
-    serial: { type: Number },
     no_of_seat: { type: String },
-    transmission_type: { type: String, required: "transmission type can't be empty." },
+    transmission_type: {
+      type: String,
+      required: "transmission type can't be empty.",
+    },
   },
   condition: {
     type: String,
@@ -30,7 +31,7 @@ const CarModelSchema = new mongoose.Schema({
     fuel_tank_capacity: { type: Number },
   },
   drive: { type: String },
-  car_year: { type: String ,required:"car years can't be empty." },
+  car_year: { type: String, required: "car years can't be empty." },
   fixed_price: { type: String },
   registration_year: { type: String },
 

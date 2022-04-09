@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   await connectDB();
 
   switch (method) {
-    case "GET":
+    case "":
       try {
         const { search } = req.query;
         console.log(search);
