@@ -1,18 +1,16 @@
 export default function Form({ searchHandle, data }) {
   return (
     <div>
-      
       <section className="p-6 dark:text-coolGray-100">
-      
         <form
           noValidate=""
           className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-coolGray-900 ng-untouched ng-pristine ng-valid"
         >
           <h2 className="w-full text-2xl font-bold leading-tight">
-          CHOOSE YOUR CAR MODEL
+            CHOOSE YOUR CAR MODEL
           </h2>
           <div>
-            <div>
+            <div className="col-span-6 sm:col-span-3">
               <label htmlFor="chassi_number" className="block mb-1 ml-1">
                 chassi Number
               </label>
@@ -26,41 +24,32 @@ export default function Form({ searchHandle, data }) {
               />
             </div>
           </div>
+
           <div className="col-span-6 sm:col-span-3">
-            <label
-              htmlFor="maker"
-              className="block text-sm font-medium text-gray-700"
-            >
-              maker
+            <label htmlFor="maker_name" className="block mb-1 ml-1">
+              Maker Name
             </label>
-            <select
-              id="maker"
-              name="name"
-              autoComplete="maker-name"
-              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            >
-              {data?.data?.map((p) =>
-                p.package_type.map((p) => <option key={p}>{p}</option>)
-              )}
-            </select>
+            <input
+              id="maker-name"
+              defaultValue={data?.data?.map((car) => car.maker_name.maker_name)}
+              type="name"
+              placeholder="Enter  your maker name"
+              required=""
+              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+            />
           </div>
           <div className="col-span-6 sm:col-span-3">
-            <label
-              htmlFor="model"
-              className="block text-sm font-medium text-gray-700"
-            >
-              model
+            <label htmlFor="maker_name" className="block mb-1 ml-1">
+              Model Name
             </label>
-            <select
-              id="model"
-              name="name"
-              autoComplete="model-name"
-              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            >
-              {data?.data?.map((p) =>
-                p.package_type.map((p) => <option key={p}>{p}</option>)
-              )}
-            </select>
+            <input
+              id="model-name"
+              defaultValue={data?.data?.map((car) => car.model_name)}
+              type="name"
+              placeholder="Enter  your model name"
+              required=""
+              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+            />
           </div>
 
           <div className="col-span-6 sm:col-span-3">

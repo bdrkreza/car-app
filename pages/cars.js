@@ -13,7 +13,7 @@ export async function getServerSideProps() {
 
 export default function Car({ data }) {
   return (
-    <div className="container m-auto px-32">
+    <div className="container m-auto lg:px-32 sm:px-2">
       {data ? <Card /> : <SkeletonCard />}
     </div>
   );
