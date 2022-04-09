@@ -8,14 +8,9 @@ export default function Car() {
     let key = e?.target.value;
     setSearchKey(key);
   };
-  console.log(items);
+
   useEffect(() => {
-    fetch(`https://car-app.vercel.app/api/cars/${searchKey}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(`https://car-app.vercel.app/api/cars/${searchKey}`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
