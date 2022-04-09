@@ -1,18 +1,25 @@
+import NextCors from "nextjs-cors";
 import CarAutoModel from "../../../models/car-model";
 import connectDB from "../../../utils/connectDB";
+// Initializing the cors middleware
 
 export default async function handler(req, res) {
   const {
     query: { carId },
-    method
-     } = req;
+    method,
+  } = req;
 
   await connectDB();
+  await NextCors(req, res, {
+    // Options
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    origin: "*",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  });
 
   switch (method) {
     case "GET" /* Get a model by its ID */:
       try {
-    
         const chassis = await CarAutoModel.find({
           $or: [{ chassis_number: { $regex: carId, $options: "i" } }],
         });

@@ -1,20 +1,42 @@
-import SkeletonCard from "../components/skeletonCard";
+import { useEffect, useState } from "react";
 import Card from "../components/userCard/Card";
 
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`https://car-app.vercel.app/api/cars`);
-  const data = await res.json();
+export default function Car() {
+  const [items, setItems] = useState([]);
+  const [searchKey, setSearchKey] = useState("");
+  const searchHandle = async (e) => {
+    let key = e?.target.value;
+    setSearchKey(key);
+  };
+  console.log(items);
+  useEffect(() => {
+    fetch(`https://car-app.vercel.app/api/cars/${searchKey}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setItems(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [searchKey]);
 
-  // Pass data to the page via props
-  return { props: { data } };
-}
-
-export default function Car({ data }) {
   return (
     <div className="container m-auto lg:px-32 sm:px-2">
-      {data ? <Card /> : <SkeletonCard />}
+      <Card searchHandle={searchHandle} data={items} />
     </div>
   );
 }
+
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch(`https://car-app.vercel.app/api/cars`);
+//   const data = await res.json();
+
+//   // Pass data to the page via props
+//   return { props: { data } };
+// }

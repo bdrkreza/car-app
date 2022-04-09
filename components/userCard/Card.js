@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react";
 import CardImage from "./cardImage";
 import CardTop from "./cardTop";
 import Form from "./inputForm";
 
-export default function Card() {
-  const [cars, setCars] = useState([]);
-
-  const searchHandle = async (e) => {
-    let key = e?.target.value;
-    let result = await fetch(`http://localhost:3000/api/cars/${key}`);
-    result = await result.json();
-    setCars(result);
-  };
-
-  useEffect(() => {
-    searchHandle();
-  }, []);
-
+export default function Card({ data, searchHandle }) {
   return (
     <div className="shadow-md dark:text-coolGray-100  ">
       <CardTop />
@@ -30,7 +16,7 @@ export default function Card() {
             <CardImage />
           </div>
         </div>
-        <Form searchHandle={searchHandle} data={cars} />
+        <Form searchHandle={searchHandle} data={data} />
       </div>
     </div>
   );

@@ -1,5 +1,11 @@
+import Cors from "cors";
 import CarAutoModel from "../../../models/car-model";
 import connectDB from "../../../utils/connectDB";
+
+// Initializing the cors middleware
+const cors = Cors({
+  methods: ["GET", "HEAD"],
+});
 
 export default async function handler(req, res) {
   const { method } = req;
@@ -17,18 +23,18 @@ export default async function handler(req, res) {
         res.status(400).json({ success: false, error });
       }
       break;
-    case "GET":
-      try {
-        const getCarData = await CarAutoModel.find(
-          {}
-        ); /* find all the data in our database */
-        res
-          .status(200)
-          .json({ success: true, chassis_number_prefix: getCarData });
-      } catch (error) {
-        res.status(400).json({ success: false, error });
-      }
-      break;
+    // case "GET":
+    //   try {
+    //     const getCarData = await CarAutoModel.find(
+    //       {}
+    //     ); /* find all the data in our database */
+    //     res
+    //       .status(200)
+    //       .json({ success: true, chassis_number_prefix: getCarData });
+    //   } catch (error) {
+    //     res.status(400).json({ success: false, error });
+    //   }
+    //   break;
     case "POST":
       try {
         const cars = await CarAutoModel.create(
