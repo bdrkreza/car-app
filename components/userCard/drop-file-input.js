@@ -1,19 +1,20 @@
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 const DropFileInput = () => {
-  const [images, setImages] = useState([]);
-  const [imageUrls, setImageUrls] = useState([]);
-  console.log(images);
-  function onImageChange(e) {
-    setImages([...e.target.files]);
-  }
 
-  useEffect(() => {
-    if (images.length < 1) return;
-    const newImageUrl = [];
-    images.forEach((img) => newImageUrl.push(URL.createObjectURL(img)));
-    setImageUrls(newImageUrl);
-  }, [images]);
+  const [pictures, setPictures] = useState([]);
+
+  const handleImageUpload = e => {
+    const tempArr = [];
+    [...e.target.files].forEach(file => {
+      tempArr.push({
+        data: file,
+        url: URL.createObjectURL(file)
+      });
+
+    });
+  
+    setPictures(tempArr);
+  };
 
   return (
     <>
@@ -31,15 +32,19 @@ const DropFileInput = () => {
           <input
             multiple
             type="file"
-            onChange={onImageChange}
+            onChange={handleImageUpload}
             className="hidden"
           />
         </label>
       </div>
 
-      {imageUrls.map((imgUrl) => (
-        <Image key={imgUrl} height={100} width={100} src={imageUrls} />
-      ))}
+      <div className="flex gap-2 flex-wrap">
+        {pictures.map((imgUrl, index) => (
+          <div key={index}>
+            <img src={imgUrl?.url} alt="images" className="w-28 h-28" />
+          </div>
+        ))}
+      </div>
     </>
   );
 };
