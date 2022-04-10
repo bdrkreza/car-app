@@ -2,19 +2,17 @@ import Image from "next/image";
 import { useState } from "react";
 
 const DropFileInput = () => {
-
   const [pictures, setPictures] = useState([]);
 
-  const handleImageUpload = e => {
+  const handleImageUpload = (e) => {
     const tempArr = [];
-    [...e.target.files].forEach(file => {
+    [...e.target.files].forEach((file) => {
       tempArr.push({
         data: file,
-        url: URL.createObjectURL(file)
+        url: URL.createObjectURL(file),
       });
-
     });
-  
+
     setPictures(tempArr);
   };
 
