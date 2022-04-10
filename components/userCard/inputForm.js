@@ -12,13 +12,13 @@ export default function Form({ searchHandle, data }) {
           <div>
             <div className="col-span-6 sm:col-span-3">
               <label htmlFor="chassi_number" className="block mb-1 ml-1">
-                chassi Number
+                chassis Number
               </label>
               <input
                 id="chassi_number"
                 onChange={searchHandle}
                 type="name"
-                placeholder="Enter chassi number"
+                placeholder="Enter chassis number"
                 required=""
                 className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
               />
