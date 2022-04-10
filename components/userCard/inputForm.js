@@ -12,7 +12,7 @@ export default function Form({ searchHandle, data }) {
           <div>
             <div className="col-span-6 sm:col-span-3">
               <label htmlFor="chassi_number" className="block mb-1 ml-1">
-                chassis Number
+                Chassis Number
               </label>
               <input
                 id="chassi_number"
@@ -20,7 +20,7 @@ export default function Form({ searchHandle, data }) {
                 type="name"
                 placeholder="Enter chassis number"
                 required=""
-                className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+                className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-60 focus:ring-orange-500 dark:bg-coolGray-800"
               />
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function Form({ searchHandle, data }) {
               type="name"
               placeholder="Enter  your maker name"
               required=""
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-60 focus:ring-orange-500 dark:bg-coolGray-800"
             />
           </div>
           <div className="col-span-6 sm:col-span-3">
@@ -48,7 +48,7 @@ export default function Form({ searchHandle, data }) {
               type="name"
               placeholder="Enter  your model name"
               required=""
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-60 focus:ring-orange-500 dark:bg-coolGray-800"
             />
           </div>
 
@@ -114,7 +114,8 @@ export default function Form({ searchHandle, data }) {
           <div>
             <button
               type="submit"
-              className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-400 focus:ring-violet-400 hover:ring-violet-400 dark:text-coolGray-900"
+              // className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-400 focus:ring-violet-400 hover:ring-violet-400 dark:text-coolGray-900"
+              className="w-full bg-orange-500 text-white py-3.5 px-5 my-2 mx-0 border-none rounded cursor-pointer hover:bg-orange-600"
             >
               Send
             </button>

@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { useState } from "react";
+
 const DropFileInput = () => {
 
   const [pictures, setPictures] = useState([]);
@@ -38,10 +40,19 @@ const DropFileInput = () => {
         </label>
       </div>
 
-      <div className="flex gap-2 flex-wrap">
+      <div className="flex gap-2 ml-4 flex-wrap">
         {pictures.map((imgUrl, index) => (
-          <div key={index}>
-            <img src={imgUrl?.url} alt="images" className="w-28 h-28" />
+          <div key={index} className="relative">
+            <Image
+            // className="absolute"
+            src={imgUrl?.url}
+            height={120}
+            width={120}
+            alt="Image"
+            />
+
+            <button className="absolute mr-10">Delete</button>
+            {/* <img src={imgUrl?.url} alt="images" className="w-28 h-28" /> */}
           </div>
         ))}
       </div>
