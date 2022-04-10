@@ -4,7 +4,7 @@ export default function Form({ searchHandle, data }) {
       <section className="p-6 dark:text-coolGray-100">
         <form
           noValidate=""
-          className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-coolGray-900 ng-untouched ng-pristine ng-valid"
+          className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md  dark:bg-coolGray-900 ng-untouched ng-pristine ng-valid"
         >
           <h2 className="w-full text-2xl font-bold leading-tight">
             CHOOSE YOUR CAR MODEL
