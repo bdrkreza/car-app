@@ -2,7 +2,7 @@ import CardTop from "./cardTop";
 import DropFileInput from "./drop-file-input";
 import Form from "./inputForm";
 
-export default function Card({ data, searchHandle }) {
+export default function Card({ data, handleOnChange }) {
   return (
     <div className="shadow-md dark:text-coolGray-100  ">
       <CardTop />
@@ -16,7 +16,7 @@ export default function Card({ data, searchHandle }) {
             <DropFileInput />
           </div>
         </div>
-        <Form searchHandle={searchHandle} data={data} />
+        <Form data={data} handleOnChange={handleOnChange} />
       </div>
     </div>
   );

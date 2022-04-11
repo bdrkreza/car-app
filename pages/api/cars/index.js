@@ -1,9 +1,11 @@
 import NextCors from "nextjs-cors";
 import CarAutoModel from "../../../models/car-model";
 import connectDB from "../../../utils/connectDB";
+import upload from "../../../utils/image-upload";
 
 export default async function handler(req, res) {
   const { method } = req;
+
   await NextCors(req, res, {
     // Options
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
@@ -37,10 +39,14 @@ export default async function handler(req, res) {
       break;
     case "POST":
       try {
-        const cars = await CarAutoModel.create(
-          req.body
-        ); /* create a new model in the database */
-        res.status(201).json({ success: true, data: cars });
+        upload.array("image")(req, {}, (err) => {
+          const newCar = CarAutoModel.create({
+            ...req.body,
+            images: req.files,
+          }); /* create a new model in the database */
+          res.status(201).json({ success: true, data: newCar });
+          console.log(req.body);
+        });
       } catch (error) {
         res.status(400).json({ success: false, error });
       }

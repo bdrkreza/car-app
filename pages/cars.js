@@ -4,11 +4,14 @@ import Card from "../components/userCard/Card";
 export default function Car() {
   const [items, setItems] = useState([]);
   const [searchKey, setSearchKey] = useState("");
-  const searchHandle = async (e) => {
+  const [formData, setFormData] = useState([]);
+  const handleOnChange = (e) => {
+    e.preventDefault();
     let key = e?.target.value;
+    setFormData({ ...formData, [e.target.name]: e.target.value });
     setSearchKey(key);
   };
-
+  console.log(formData);
   useEffect(() => {
     fetch(`https://car-app.vercel.app/api/cars/${searchKey}`)
       .then((res) => res.json())
@@ -22,7 +25,7 @@ export default function Car() {
 
   return (
     <div className="container m-auto lg:px-32 sm:px-2">
-      <Card searchHandle={searchHandle} data={items} />
+      <Card handleOnChange={handleOnChange} data={items} />
     </div>
   );
 }
