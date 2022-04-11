@@ -1,18 +1,18 @@
+import Image from "next/image";
 import { useState } from "react";
-const DropFileInput = () => {
 
+const DropFileInput = () => {
   const [pictures, setPictures] = useState([]);
 
-  const handleImageUpload = e => {
+  const handleImageUpload = (e) => {
     const tempArr = [];
-    [...e.target.files].forEach(file => {
+    [...e.target.files].forEach((file) => {
       tempArr.push({
         data: file,
-        url: URL.createObjectURL(file)
+        url: URL.createObjectURL(file),
       });
-
     });
-  
+
     setPictures(tempArr);
   };
 
@@ -38,10 +38,19 @@ const DropFileInput = () => {
         </label>
       </div>
 
-      <div className="flex gap-2 flex-wrap">
+      <div className="flex gap-2 ml-4 flex-wrap">
         {pictures.map((imgUrl, index) => (
-          <div key={index}>
-            <img src={imgUrl?.url} alt="images" className="w-28 h-28" />
+          <div key={index} className="relative">
+            <Image
+            // className="absolute"
+            src={imgUrl?.url}
+            height={120}
+            width={120}
+            alt="Image"
+            />
+
+            <button className="absolute mr-10">Delete</button>
+            {/* <img src={imgUrl?.url} alt="images" className="w-28 h-28" /> */}
           </div>
         ))}
       </div>

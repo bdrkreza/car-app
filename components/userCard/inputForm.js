@@ -4,8 +4,13 @@ export default function Form({ handleOnChange, data }) {
     <div>
       <section className="p-6 dark:text-coolGray-100">
         <form
+<<<<<<< HEAD
           onSubmit={handleOnChange}
           className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-coolGray-900 ng-untouched ng-pristine ng-valid"
+=======
+          noValidate=""
+          className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md  dark:bg-coolGray-900 ng-untouched ng-pristine ng-valid"
+>>>>>>> 7abc2db27dd29685eaf597664acfce0b6a43e2ff
         >
           <h2 className="w-full text-2xl font-bold leading-tight">
             CHOOSE YOUR CAR MODEL
@@ -13,7 +18,7 @@ export default function Form({ handleOnChange, data }) {
           <div>
             <div className="col-span-6 sm:col-span-3">
               <label htmlFor="chassi_number" className="block mb-1 ml-1">
-                chassis Number
+                Chassis Number
               </label>
 
               <input
@@ -22,7 +27,12 @@ export default function Form({ handleOnChange, data }) {
                 name="chassis_number"
                 type="text"
                 placeholder="Enter chassis number"
+<<<<<<< HEAD
                 className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+=======
+                required=""
+                className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-60 focus:ring-orange-500 dark:bg-coolGray-800"
+>>>>>>> 7abc2db27dd29685eaf597664acfce0b6a43e2ff
               />
             </div>
           </div>
@@ -40,7 +50,7 @@ export default function Form({ handleOnChange, data }) {
               type="text"
               placeholder="Enter  your maker name"
               required=""
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-60 focus:ring-orange-500 dark:bg-coolGray-800"
             />
           </div>
           <div className="col-span-6 sm:col-span-3">
@@ -56,7 +66,7 @@ export default function Form({ handleOnChange, data }) {
               type="text"
               placeholder="Enter  your model name"
               required=""
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
+              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-60 focus:ring-orange-500 dark:bg-coolGray-800"
             />
           </div>
 
@@ -126,7 +136,8 @@ export default function Form({ handleOnChange, data }) {
           <div>
             <button
               type="submit"
-              className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-400 focus:ring-violet-400 hover:ring-violet-400 dark:text-coolGray-900"
+              // className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-400 focus:ring-violet-400 hover:ring-violet-400 dark:text-coolGray-900"
+              className="w-full bg-orange-500 text-white py-3.5 px-5 my-2 mx-0 border-none rounded cursor-pointer hover:bg-orange-600"
             >
               Send
             </button>
