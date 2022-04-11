@@ -1,3 +1,4 @@
+import CarDetails from "./carDetails";
 import CardTop from "./cardTop";
 import DropFileInput from "./drop-file-input";
 import Form from "./inputForm";
@@ -18,6 +19,7 @@ export default function Card({ data, searchHandle }) {
         </div>
         <Form searchHandle={searchHandle} data={data} />
       </div>
+      <CarDetails/>
     </div>
   );
 }
