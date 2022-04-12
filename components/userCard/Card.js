@@ -5,7 +5,7 @@ import Form from "./inputForm";
 
 export default function Card({ data, searchHandle }) {
   return (
-    <div className="shadow-md dark:text-coolGray-100  ">
+    <div className="dark:text-coolGray-100  ">
       <CardTop />
       <div className="grid max-w-screen-xl bg-stone-200 mt-5 grid-cols-1 gap-2 px-0 py-5 mx-auto rounded-lg md:grid-cols-2  xl:px-10 dark:bg-coolGray-800 dark:text-coolGray-100">
         <div className="flex flex-col  justify-between max-w-full p-10 shadow-md dark:bg-coolGray-900 dark:text-coolGray-100">
