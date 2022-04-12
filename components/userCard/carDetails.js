@@ -80,22 +80,15 @@ function carDetails() {
                 className="w-56 py-3 px-5 my-2 mx-0 inline-block border border-solid border-slate-400"
               >
                 <option value="volvo">Select Fuel Type</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">Suv</option>
-                <option value="crossover">Crossover</option>
-                <option value="hatehback">Hatehback</option>
-                <option value="minivan">Minivan</option>
-                <option value="van">Van</option>
-                <option value="off Roader">Off Roader</option>
-                <option value="wagon">Wagon</option>
-                <option value="mini MPV">Mini MPV</option>
-                <option value="compact">Compact</option>
-                <option value="pickup">Pickup</option>
-                <option value="coupe">Coupe</option>
-                <option value="convertible">Convertible</option>
+                <option value="cng">CNG</option>
+                <option value="lpg">LPG</option>
+                <option value="diesel">Diesel</option>
+                <option value="octane">Octane</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="plug_in_hybrid">Plug-in Hybrid</option>
                 <option value="electric">Electric</option>
-                <option value="supercar">Supercar</option>
-                <option value="hypercar">Hypercar</option>
+                <option value="petrol">Petrol</option>
+                <option value="fuel_cell_ev">Fuel Cell EV</option>
               </select>
             </div>
           </div>
@@ -154,22 +147,28 @@ function carDetails() {
                 className="w-56 py-3 px-5 my-2 mx-0 inline-block border border-solid border-slate-400"
               >
                 <option value="volvo">Select Color</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">Suv</option>
-                <option value="crossover">Crossover</option>
-                <option value="hatehback">Hatehback</option>
-                <option value="minivan">Minivan</option>
-                <option value="van">Van</option>
-                <option value="off Roader">Off Roader</option>
-                <option value="wagon">Wagon</option>
-                <option value="mini MPV">Mini MPV</option>
-                <option value="compact">Compact</option>
-                <option value="pickup">Pickup</option>
-                <option value="coupe">Coupe</option>
-                <option value="convertible">Convertible</option>
-                <option value="electric">Electric</option>
-                <option value="supercar">Supercar</option>
-                <option value="hypercar">Hypercar</option>
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="pearl">Pearl</option>
+                <option value="red_wine">Red Wine</option>
+                <option value="silver">Silver</option>
+                <option value="gray">Gray</option>
+                <option value="navy_blue">Navy Blue</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="dark_blue">Dark Blue</option>
+                <option value="mica_blue">Mica Blue</option>
+                <option value="sky_blue">Sky Blue</option>
+                <option value="green">Green</option>
+                <option value="dark_green">Dark Green</option>
+                <option value="orange">Orange</option>
+                <option value="sunset Orange">Sunset Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="brown">Brown</option>
+                <option value="gold">Gold</option>
+                <option value="mica Bronze">Mica Bronze</option>
+                <option value="beige">Beige</option>
+                <option value="purple">Purple</option>
               </select>
             </div>
           </div>
@@ -228,22 +227,17 @@ function carDetails() {
                 className="w-56 py-3 px-5 my-2 mx-0 inline-block border border-solid border-slate-400"
               >
                 <option value="volvo">Select Color</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">Suv</option>
-                <option value="crossover">Crossover</option>
-                <option value="hatehback">Hatehback</option>
-                <option value="minivan">Minivan</option>
-                <option value="van">Van</option>
-                <option value="off Roader">Off Roader</option>
-                <option value="wagon">Wagon</option>
-                <option value="mini MPV">Mini MPV</option>
-                <option value="compact">Compact</option>
-                <option value="pickup">Pickup</option>
-                <option value="coupe">Coupe</option>
-                <option value="convertible">Convertible</option>
-                <option value="electric">Electric</option>
-                <option value="supercar">Supercar</option>
-                <option value="hypercar">Hypercar</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="beige">Beige</option>
+                <option value="brown">Brown</option>
+                <option value="tan">Tan</option>
+                <option value="gray">Gray</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="dark_green">Dark Green</option>
+                <option value="two_tone">Two-Tone</option>
+                <option value="na">N/A</option>
               </select>
             </div>
           </div>
