@@ -13,13 +13,13 @@ export default function Card({ data, handleOnChange }) {
             UPLOAD CAR PHOTO*
           </h2>
           <div className="space-y-2"></div>
-          <div className="border-4 mt-5 border-dashed border-gray-400 rounded-lg h-96 md:h-full lg:h-full ">
+          <div className="border-4 mt-5 border-dashed bg-white border-gray-400 rounded-lg h-96 md:h-full lg:h-full ">
             <DropFileInput />
           </div>
         </div>
         <Form data={data} handleOnChange={handleOnChange} />
       </div>
-      <CarDetails/>
+      <CarDetails />
     </div>
   );
 }
