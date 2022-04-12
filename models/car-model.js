@@ -2,21 +2,15 @@ import mongoose from "mongoose";
 
 /* PetSchema will correspond to a collection in your MongoDB database. */
 const CarModelSchema = new mongoose.Schema({
-  maker_name: {
-    maker_name: { type: String, required: "maker name can't be empty." },
-    release_year: { type: Number },
-    serial: { type: String },
-  },
+  maker_name: { type: String, required: "maker name can't be empty." },
   model_name: { type: String, required: "model name can't be empty." },
-  car_body_type: {
-    body_name: { type: String, required: "body name can't be empty." },
-    body_image: { type: String, default: "image-url" },
-    body_image_url: { type: String, default: "image-url" },
-    no_of_seat: { type: String },
-    transmission_type: {
-      type: String,
-      required: "transmission type can't be empty.",
-    },
+  body_name: { type: String, required: "body name can't be empty." },
+  body_image: { type: String, default: "image-url" },
+  no_of_seat: { type: String, required: "seat number can't be empty." },
+
+  transmission_type: {
+    type: String,
+    required: "transmission type can't be empty.",
   },
   condition: {
     type: String,
@@ -26,21 +20,22 @@ const CarModelSchema = new mongoose.Schema({
   package_type: [String],
   chassis_number: { type: String, required: "chassis number can't be empty." },
   engines_number: [],
-  car_fuel: {
-    fuel_type: { type: String, required: true },
-    fuel_tank_capacity: { type: Number },
-  },
+  car_fuel_type: { type: String, required: true },
   drive: { type: String },
+  mileage: { type: String },
+  exterior_color: { type: String },
+  interior_color: { type: String },
   car_year: { type: String, required: "car years can't be empty." },
   fixed_price: { type: String },
   registration_year: { type: String },
+  car_features: [],
 
-  images: [
-    {
-      image_id: { type: String },
-      image_url: { type: String, default: "image-url" },
-    },
-  ],
+  asking_price: { type: Number },
+  selling_price: { type: Number },
+
+  car_description: { type: String },
+  video_link: { type: String },
+  images: [],
 });
 
 const CarAutoModel =

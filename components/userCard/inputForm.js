@@ -4,13 +4,8 @@ export default function Form({ handleOnChange, data }) {
     <div>
       <section className="p-6 dark:text-coolGray-100">
         <form
-<<<<<<< HEAD
           onSubmit={handleOnChange}
           className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-coolGray-900 ng-untouched ng-pristine ng-valid"
-=======
-          noValidate=""
-          className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md  dark:bg-coolGray-900 ng-untouched ng-pristine ng-valid"
->>>>>>> 7abc2db27dd29685eaf597664acfce0b6a43e2ff
         >
           <h2 className="w-full text-2xl font-bold leading-tight">
             CHOOSE YOUR CAR MODEL
@@ -27,12 +22,8 @@ export default function Form({ handleOnChange, data }) {
                 name="chassis_number"
                 type="text"
                 placeholder="Enter chassis number"
-<<<<<<< HEAD
-                className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-coolGray-800"
-=======
                 required=""
                 className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-60 focus:ring-orange-500 dark:bg-coolGray-800"
->>>>>>> 7abc2db27dd29685eaf597664acfce0b6a43e2ff
               />
             </div>
           </div>

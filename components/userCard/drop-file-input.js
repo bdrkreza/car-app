@@ -42,11 +42,11 @@ const DropFileInput = () => {
         {pictures.map((imgUrl, index) => (
           <div key={index} className="relative">
             <Image
-            // className="absolute"
-            src={imgUrl?.url}
-            height={120}
-            width={120}
-            alt="Image"
+              // className="absolute"
+              src={imgUrl?.url}
+              height={120}
+              width={120}
+              alt="Image"
             />
 
             <button className="absolute mr-10">Delete</button>

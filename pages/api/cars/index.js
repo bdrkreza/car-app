@@ -3,6 +3,12 @@ import CarAutoModel from "../../../models/car-model";
 import connectDB from "../../../utils/connectDB";
 import upload from "../../../utils/image-upload";
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export default async function handler(req, res) {
   const { method } = req;
 
@@ -40,12 +46,16 @@ export default async function handler(req, res) {
     case "POST":
       try {
         upload.array("image")(req, {}, (err) => {
+          const imageFiles = [];
+          for (var i = 0; i < req.files.length; i++) {
+            imageFiles.push(req.files[i].path);
+          }
+          console.log(imageFiles);
           const newCar = CarAutoModel.create({
             ...req.body,
-            images: req.files,
+            images: imageFiles,
           }); /* create a new model in the database */
           res.status(201).json({ success: true, data: newCar });
-          console.log(req.body);
         });
       } catch (error) {
         res.status(400).json({ success: false, error });
