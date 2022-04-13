@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import CardDisplay from "../components/cardDisplay";
-import Search from "../components/search";
-import DropdownMenu from "../components/selection";
-import SkeletonCard from "../components/skeletonCard";
+import SkeletonCard from "../components/common/skeletonCard";
+import SearchBar from "../components/header/search";
+import DropdownMenu from "../components/header/selection";
+import CardDisplay from "../components/home/cardDisplay";
 import styles from "../styles/Home.module.css";
 
 export async function getStaticProps() {
@@ -62,7 +62,7 @@ export default function Home({ data }) {
           handleChange={handleChange}
           category={category}
         />
-        <Search />
+        <SearchBar />
       </div>
 
       {isLoading ? (

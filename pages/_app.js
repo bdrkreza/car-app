@@ -1,11 +1,11 @@
-import Navbar from '../components/navbar';
-import '../styles/globals.css';
+import Navbar from "../components/header/navbar";
+import "../styles/globals.css";
 import "../styles/tailwind.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <Component {...pageProps} />
     </div>
   );

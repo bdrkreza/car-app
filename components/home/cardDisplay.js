@@ -8,7 +8,7 @@ export default function CardDisplay({ data }) {
       <Link key={car_id} href="h" passHref>
         <div className="max-w-sm min-h-full  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
-          <img
+            <img
               className="rounded-t-lg h-64 w-full"
               src={images?.image_url}
               alt="Landscape picture"

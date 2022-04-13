@@ -6,7 +6,7 @@ const navItem = [
     level: "Home",
   },
   {
-    link: "/about",
+    link: "/about/about",
     level: "ABOUT",
   },
   {

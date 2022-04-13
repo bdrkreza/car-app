@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import { AiFillDelete } from "react-icons/ai";
 
 const DropFileInput = () => {
   const [pictures, setPictures] = useState([]);
@@ -14,6 +15,19 @@ const DropFileInput = () => {
     });
 
     setPictures(tempArr);
+  };
+
+  const handledelete = (e) => {
+    console.log(e);
+    var deletefileName = e;
+    if (deletefileName === -1) {
+      return;
+      // pictures.splice(deletefileName, 1); // 2nd parameter means remove one item only
+    }
+    setPictures((list) => [
+      ...list.slice(0, deletefileName),
+      ...list.slice(deletefileName + 1),
+    ]);
   };
 
   return (
@@ -40,17 +54,29 @@ const DropFileInput = () => {
 
       <div className="flex gap-2 ml-4 flex-wrap">
         {pictures.map((imgUrl, index) => (
-          <div key={index} className="relative">
-            <Image
-              // className="absolute"
-              src={imgUrl?.url}
-              height={120}
-              width={120}
-              alt="Image"
-            />
-
-            <button className="absolute mr-10">Delete</button>
-            {/* <img src={imgUrl?.url} alt="images" className="w-28 h-28" /> */}
+          <div key={index}>
+            <div className="relative">
+              <div className="flex justify-between w-full absolute -mt-25  z-40">
+                <div className="bg-slate-300 p-2 rounded-full shadow ">
+                  <h1 className="text-orange-500">{index + 1}</h1>
+                </div>
+                <div className="bg-slate-300 p-2 rounded-full shadow">
+                  <button
+                    className="text-orange-500"
+                    onClick={() => handledelete(index)}
+                  >
+                    <AiFillDelete></AiFillDelete>
+                  </button>
+                </div>
+              </div>
+              <Image
+                className="z-20 absolute"
+                src={imgUrl?.url}
+                height={120}
+                width={120}
+                alt="Image"
+              />
+            </div>
           </div>
         ))}
       </div>

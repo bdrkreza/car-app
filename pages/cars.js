@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "../components/userCard/Card";
+import Card from "../components/carUpload/Card";
 
 export default function Car() {
   const [items, setItems] = useState([]);
