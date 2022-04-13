@@ -25,8 +25,8 @@ const CarFeatures = () => {
           SELECT YOUR CAR FEATURES
         </h3>
         <div className="grid grid-cols-3 grid-rows-5 gap-4 ">
-          {carboxs.map((carbox) => (
-            <div>
+          {carboxs.map((carbox, index) => (
+            <div key={index}>
               <label className="inline-flex items-center">
                 <input
                   type="checkbox"
