@@ -1,5 +1,6 @@
 import CarDetails from "./carDetails";
 import CardTop from "./cardTop";
+import CarFeatures from "./CarFeatures";
 import DropFileInput from "./drop-file-input";
 import Form from "./inputForm";
 
@@ -20,6 +21,9 @@ export default function Card({ data, handleOnChange }) {
         <Form data={data} handleOnChange={handleOnChange} />
       </div>
       <CarDetails />
+      <div>
+        <CarFeatures />
+      </div>
     </div>
   );
 }
