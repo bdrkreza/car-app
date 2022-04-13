@@ -20,7 +20,7 @@ const CarFeatures = () => {
   ];
   return (
     <div>
-      <div className="bg-gray-200 rounded-lg p-9 mb-6">
+      <div className="bg-[#efefef] rounded-lg p-9 mb-6">
         <h3 className="font-bold text-xl mt-2 mb-7 ">
           SELECT YOUR CAR FEATURES
         </h3>

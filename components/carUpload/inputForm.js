@@ -127,7 +127,6 @@ export default function Form({ handleOnChange, data }) {
           <div>
             <button
               type="submit"
-              // className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-400 focus:ring-violet-400 hover:ring-violet-400 dark:text-coolGray-900"
               className="w-full bg-orange-500 text-white py-3.5 px-5 my-2 mx-0 border-none rounded cursor-pointer hover:bg-orange-600"
             >
               Send

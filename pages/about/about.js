@@ -4,12 +4,12 @@ export default function About({ data }) {
   console.log(data);
   return (
     <div>
-      {data.chassis_number_prefix.map((carItem) =>
-        carItem.images.map((img, index) => (
+      {data.chassis_number_prefix?.map((carItem) =>
+        carItem?.images?.map((img, index) => (
           <div key={index}>
             <div key={index}>
               <Image
-                src={img}
+                src={`/uploads/${img}`}
                 alt="Picture of the author"
                 width={500}
                 height={500}

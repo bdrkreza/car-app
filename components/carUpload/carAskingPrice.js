@@ -21,7 +21,7 @@ export default function CarAskingPrice() {
             </label>
             <input
               type="text"
-              className="mb-6 bg-gray-100 border border-[#f06424] text-gray-900 text-sm    block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-500 dark:text-gray-500 "
+              className="mb-6 bg-gray-100 border border-[#f06424] text-gray-900 text-sm    block  w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-500 dark:text-gray-500 "
               value=""
               placeholder="Asking price"
             />
@@ -35,7 +35,7 @@ export default function CarAskingPrice() {
             </label>
             <input
               type="text"
-              className="mb-6 bg-gray-100 border border-[#f06424]  text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-500 dark:text-gray-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="mb-6  bg-gray-100 border border-[#f06424]  text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-500 dark:text-gray-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Selling Price"
             />
           </div>
