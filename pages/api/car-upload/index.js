@@ -1,15 +1,16 @@
+import Cors from "cors";
 import NextCors from "nextjs-cors";
 import CarUploadModel from "../../../models/car_upload";
 import connectDB from "../../../utils/connectDB";
 
 // Initializing the cors middleware
-// export const cors = Cors({
-//   methods: ["GET", "HEAD"],
-// });
+export const cors = Cors({
+  methods: ["GET", "HEAD"],
+});
 
 export const config = {
   api: {
-    bodyParser: false,
+    bodyParser: true,
   },
 };
 
