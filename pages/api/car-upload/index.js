@@ -1,7 +1,11 @@
 import NextCors from "nextjs-cors";
-import CarAutoModel from "../../../models/car-model";
+import CarUploadModel from "../../../models/car_upload";
 import connectDB from "../../../utils/connectDB";
-import upload from "../../../utils/image-upload";
+
+// Initializing the cors middleware
+// export const cors = Cors({
+//   methods: ["GET", "HEAD"],
+// });
 
 export const config = {
   api: {
@@ -19,7 +23,6 @@ export default async function handler(req, res) {
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   });
   await connectDB();
-
   switch (method) {
     // case "":
     //   try {
@@ -33,7 +36,7 @@ export default async function handler(req, res) {
     //   break;
     case "GET":
       try {
-        const getCarData = await CarAutoModel.find(
+        const getCarData = await CarUploadModel.find(
           {}
         ); /* find all the data in our database */
         res
@@ -45,18 +48,17 @@ export default async function handler(req, res) {
       break;
     case "POST":
       try {
-        upload.array("image")(req, {}, (err) => {
-          const imageFiles = [];
-          for (var i = 0; i < req.files.length; i++) {
-            imageFiles.push(req.files[i].path);
-          }
-          console.log(imageFiles);
-          const newCar = CarAutoModel.create({
-            ...req.body,
-            images: imageFiles,
-          }); /* create a new model in the database */
-          res.status(201).json({ success: true, data: newCar });
-        });
+        console.log(req.body);
+        const chassis_number = CarUploadModel.findOne({ cn: req.body.cn });
+        if (chassis_number) {
+          res.status(400).json({ success: "chassis number is here" });
+        }
+
+        const newCar = CarUploadModel.create(
+          req.body
+        ); /* create a new model in the database */
+
+        res.status(201).json({ success: true, data: newCar });
       } catch (error) {
         res.status(400).json({ success: false, error });
       }

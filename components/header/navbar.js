@@ -14,7 +14,7 @@ const navItem = [
     level: "CARS",
   },
   {
-    link: "/uploadCar",
+    link: "/carUpload/carUpload",
     level: "UploadCar",
   },
   {
