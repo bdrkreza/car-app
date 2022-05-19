@@ -9,7 +9,7 @@ import connectDB from "../../../utils/connectDB";
 
 export const config = {
   api: {
-    bodyParser: true,
+    bodyParser: false,
   },
 };
 
